@@ -25,6 +25,7 @@ const EmployeeCreate = () => {
       </div>
 
       <h2>active steps</h2>
+      <h1>dashboard</h1>
 
       {/* Form */}
       <Container>
