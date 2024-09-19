@@ -1,0 +1,86 @@
+/* Sidebar.css */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 999; /* Ensure it's above the content */
+}
+
+.sidebar.collapsed {
+  width: 50px; /* Collapse the sidebar width */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.prof {
+  width: 120px;
+  height: 100px;
+  border-radius: 50%;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 10px 20px;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.toggle-btn {
+  display: flex; 
+  top: 10px;
+  right: -5px; 
+  background-color: #333;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 35px;
+  
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.submenu {
+  padding-left: 20px;
+}
+
+.employee-menu-icon {
+  margin-left: 0px;
+}
+
+.content {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+.content.with-sidebar {
+  margin-left: 250px;
+}
+
+.content.without-sidebar {
+  margin-left: 20px; /* Adjust content margin when sidebar is collapsed */
+}

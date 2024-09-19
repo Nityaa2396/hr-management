@@ -1,0 +1,72 @@
+.employee-create {
+  width: 245%;
+  height: 100px;
+  padding: 20px;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.step {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: black;
+  flex: 1;
+  margin: 0 5px;
+}
+
+.step.active {
+  background-color: green;
+  color: white;
+  width:100%;
+}
+
+/* Form container */
+.employee-form {
+ 
+  width: 100%;
+  height: auto;
+ 
+  column-gap: 20px; /* Space between columns */
+  row-gap: 0px; /* Space between rows */
+}
+
+.presentAddress {
+  background-color: 1px solid #ccc;
+  border-bottom: #ccc;
+}
+
+.required {
+  color: red;
+}
+
+
+/* Make each form group take one column */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  background-color: 1px solid #ccc;
+ border-bottom: #ccc;
+  width: 100%;
+}
+.form-control input {
+  background-color: 1px solid #ccc;
+ border-bottom: #ccc;
+  
+}
+

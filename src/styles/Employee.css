@@ -1,0 +1,12 @@
+.employee-dropdown {
+  padding-left: 15px;
+  list-style-type: none;
+}
+
+.employee-container {
+  display: flex;
+}
+
+.employee-sidebar {
+  width: 200px;
+}
