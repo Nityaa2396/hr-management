@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import DataTable from "react-data-table-component";
+import "./AwardList.css";
 
 // Sample data for the table
 const data = [
@@ -21,6 +22,16 @@ const data = [
     awardDate: "31/08/2021",
   },
 ];
+
+const handleEdit = (row) => {
+  // Logic to edit the selected row
+  console.log("Editing row", row);
+};
+
+const handleDelete = (id) => {
+  // Logic to delete the selected row
+  console.log("Deleting row with ID", id);
+};
 
 // Define the table columns
 const columns = [
@@ -57,14 +68,19 @@ const columns = [
   {
     name: "Actions",
     cell: (row) => (
-      <>
-        <Button variant="success" size="sm" className="me-2">
-          <i className="fas fa-edit"></i>
+      <div className="action-buttons">
+        <Button
+          variant="success"
+          size="sm"
+          className="me-2"
+          onClick={() => handleEdit(row)}
+        >
+          <i className="fas fa-pen"></i>
         </Button>
-        <Button variant="danger" size="sm">
+        <Button variant="danger" size="sm" onClick={() => handleDelete(row.id)}>
           <i className="fas fa-trash"></i>
         </Button>
-      </>
+      </div>
     ),
   },
 ];

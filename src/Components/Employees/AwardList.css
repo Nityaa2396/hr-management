@@ -1,0 +1,164 @@
+/* Container padding */
+.p-4 {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  width: 1100px;
+  height: 500px;
+}
+
+/* Heading styles */
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Subheader */
+p {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Filter section */
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+/* Form label */
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+/* Date input styling */
+.form-control {
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+/* Button styling */
+button {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* Filter and Add Awards buttons */
+button.me-2 {
+  margin-right: 0.5rem;
+}
+
+button.variant-dark {
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+}
+
+button.variant-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+/* Table styling */
+.rdt_Table {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rdt_TableHeader {
+  background-color: #f1f3f5;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.75rem 1rem;
+}
+
+.rdt_TableBody {
+  background-color: #fff;
+}
+
+.rdt_TableRow {
+  transition: background-color 0.3s ease;
+}
+
+.rdt_TableRow:hover {
+  background-color: #f8f9fa;
+}
+
+.rdt_TableCell {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.rdt_Pagination {
+  background-color: #f1f3f5;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Search box */
+.sub-header .form-control {
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+/* Highlight row on hover */
+.rdt_TableRow--highlight {
+  background-color: #e9ecef;
+}
+
+/* Style for action buttons (edit and delete) */
+.action-buttons button {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.action-buttons .fa-pen {
+  background-color: #28a745;
+  color: white; /* Pen icon color */
+}
+
+.action-buttons .fa-trash {
+  background-color: #dc3545;
+  color: white; /* Trash icon color */
+}
+
+/* Action button styles */
+button.variant-success {
+ 
+  border: none;
+}
+
+button.variant-danger {
+ 
+  border: none;
+}
+
+button i {
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-control {
+    margin-bottom: 1rem;
+  }
+
+  .d-flex {
+    flex-direction: column;
+  }
+
+  .sub-header .form-control {
+    width: 100%;
+  }
+}
