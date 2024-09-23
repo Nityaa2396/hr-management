@@ -11,6 +11,7 @@ import "../styles/Sidebar.css";
 const Sidebar = () => {
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isEmployeeMenuOpen, setEmployeeMenuOpen] = useState(false);
+  const [isAttendanceMenuOpen, setAttendanceMenuOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarCollapsed(!isSidebarCollapsed);
@@ -18,6 +19,10 @@ const Sidebar = () => {
 
   const toggleEmployeeMenu = () => {
     setEmployeeMenuOpen(!isEmployeeMenuOpen);
+  };
+
+  const toggleAttendanceMenu = () => {
+    setAttendanceMenuOpen(!isAttendanceMenuOpen);
   };
 
   return (
@@ -68,9 +73,41 @@ const Sidebar = () => {
           )}
         </li>
 
+        {/* {Attendance sub-menu} */}
         <li>
-          <Link to="/attendance">Attendance</Link>
+          <div className="menu-item" onClick={toggleAttendanceMenu}>
+            Attendance
+            <FontAwesomeIcon
+              icon={isAttendanceMenuOpen ? faAngleDown : faAngleRight}
+              className="attendance-menu-icon"
+            />
+          </div>
+
+          {isAttendanceMenuOpen && (
+            <ul className="submenu">
+              <li>
+                <Link to="/attendance/import">Attendance Import</Link>
+              </li>
+              <li>
+                <Link to="/attendance/manual-punching">Manual Punching</Link>
+              </li>
+              <li>
+                <Link to="/attendance/leave-application">
+                  Leave Application
+                </Link>
+              </li>
+              <li>
+                <Link to="/attendance/absents-details">Absents Details</Link>
+              </li>
+              <li>
+                <Link to="/attendance/verification">
+                  Attendance Verification
+                </Link>
+              </li>
+            </ul>
+          )}
         </li>
+
         <li>
           <Link to="/payroll">Payroll</Link>
         </li>
