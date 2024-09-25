@@ -12,6 +12,7 @@ const Sidebar = () => {
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isEmployeeMenuOpen, setEmployeeMenuOpen] = useState(false);
   const [isAttendanceMenuOpen, setAttendanceMenuOpen] = useState(false);
+  const [isPayrollMenuOpen, setPayrollMenuOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarCollapsed(!isSidebarCollapsed);
@@ -23,6 +24,10 @@ const Sidebar = () => {
 
   const toggleAttendanceMenu = () => {
     setAttendanceMenuOpen(!isAttendanceMenuOpen);
+  };
+
+  const togglePayrollMenu = () => {
+    setPayrollMenuOpen(!isPayrollMenuOpen);
   };
 
   return (
@@ -109,8 +114,38 @@ const Sidebar = () => {
         </li>
 
         <li>
-          <Link to="/payroll">Payroll</Link>
+          <div className="menu-item" onClick={togglePayrollMenu}>
+            Payroll
+            <FontAwesomeIcon
+              icon={isAttendanceMenuOpen ? faAngleDown : faAngleRight}
+              className="payroll-menu-icon"
+            />
+          </div>
+
+          {isPayrollMenuOpen && (
+            <ul className="submenu">
+              <li>
+                <Link to="/payroll/payslip">Payslip</Link>
+              </li>
+              <li>
+                <Link to="/payroll/salary-setup">Salary Setup</Link>
+              </li>
+              <li>
+                <Link to="/payroll/salary-process">Salary Process</Link>
+              </li>
+              <li>
+                <Link to="/payroll/employee-loan">Employee Loan</Link>
+              </li>
+              <li>
+                <Link to="/payroll/conveyance">Employee Conveyance</Link>
+              </li>
+              <li>
+                <Link to="/payroll/tax-file-upload">Tax File Upload</Link>
+              </li>
+            </ul>
+          )}
         </li>
+
         <li>
           <Link to="/reports">Reports</Link>
         </li>

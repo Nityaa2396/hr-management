@@ -1,8 +1,10 @@
 .login-container {
- 
+  justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vh;
+  padding: 50px 50px;
+  margin: 50px 50px;
 }
 
 .login-form {
@@ -10,7 +12,7 @@
 
   flex-direction: column;
   width: 90%;
-  max-width: 400px; /* Limit the form width on larger screens */
+  max-width: 400px; 
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -43,4 +45,11 @@ p {
   cursor: pointer;
   color: blue;
   text-align: center;
+}
+
+.password-input {
+  padding: 10px;
+  margin: 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
