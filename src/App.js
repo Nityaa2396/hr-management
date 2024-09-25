@@ -13,6 +13,11 @@ import EmployeeList from "./Components/Employees/EmployeeList";
 import EmployeeImports from "./Components/Employees/EmployeeImports";
 import AwardList from "./Components/Employees/AwardList";
 import NoticeList from "./Components/Employees/NoticeList";
+import AttendanceImport from "./Components/Attendance/AttendanceImport"; // New
+import ManualPunching from "./Components/Attendance/ManualPunching"; // New
+import LeaveApplication from "./Components/Attendance/LeaveApplication"; // New
+import AbsentsDetails from "./Components/Attendance/AbsentsDetails"; // New
+import AttendanceVerification from "./Components/Attendance/AttendanceVerification"; // New
 import "./App.css";
 
 function App() {
@@ -96,6 +101,42 @@ function App() {
             <Route
               path="/employees/notice"
               element={isAuthenticated ? <NoticeList /> : <Navigate to="/" />}
+            />
+
+            {/* Attendance subpages */}
+            <Route
+              path="/attendance/import"
+              element={
+                isAuthenticated ? <AttendanceImport /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="/attendance/manual-punching"
+              element={
+                isAuthenticated ? <ManualPunching /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="/attendance/leave-application"
+              element={
+                isAuthenticated ? <LeaveApplication /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="/attendance/absents-details"
+              element={
+                isAuthenticated ? <AbsentsDetails /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="/attendance/verification"
+              element={
+                isAuthenticated ? (
+                  <AttendanceVerification />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
             />
           </Routes>
         </div>

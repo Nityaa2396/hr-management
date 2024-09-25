@@ -1,19 +1,4 @@
-.dashboard {
-  margin-left: 250px;
-  padding: 20px;
-}
-
-.show-sidebar-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px;
-  background-color: #7c8084;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+Ensure the sidebar space remains intact
 .dashboard-container {
   padding: 20px;
   margin-left: 250px; /* Space for the sidebar */
@@ -21,4 +6,50 @@
 
 .sidebar.hide + .dashboard-container {
   margin-left: 0;
+}
+
+/* Department summary styling */
+/* .summary {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  gap: 20px; 
+} */
+
+.summary-card {
+  /* flex: 1 1 200px; 
+  max-width: 300px;  */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 10px;
+}
+
+.summary-card h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.department {
+  background-color: #f8f9fa;
+}
+
+.department h2 {
+  color: #343a40;
+}
+
+.card-body {
+  width: 300px;
+  align-items: center;
+}
+
+.card-title h5{
+  text-align: center;
+}
+
+.summary {
+  width: 1100px;
+}
+
+.department-summary{
+  width: 1000px;
 }

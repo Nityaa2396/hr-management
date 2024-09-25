@@ -1,4 +1,3 @@
-// src/components/DepartmentSummary.js
 import React from "react";
 import "../styles/DepartmentSummary.css";
 
