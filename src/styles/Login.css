@@ -53,3 +53,35 @@ p {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+/* Login.css */
+.forgot-password-container {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.forgot-password-link:hover {
+  color: #0056b3;
+}
+
+.toggle-view-button{
+  margin-top: 20px;
+  text-align: center;
+  background: none;
+ 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+

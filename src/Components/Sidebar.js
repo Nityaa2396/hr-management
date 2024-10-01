@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleRight,
   faAngleDown,
   faBars,
+  faPowerOff,
+  faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ setIsAuthenticated }) => {
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isEmployeeMenuOpen, setEmployeeMenuOpen] = useState(false);
   const [isAttendanceMenuOpen, setAttendanceMenuOpen] = useState(false);
   const [isPayrollMenuOpen, setPayrollMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setSidebarCollapsed(!isSidebarCollapsed);
@@ -28,6 +31,11 @@ const Sidebar = () => {
 
   const togglePayrollMenu = () => {
     setPayrollMenuOpen(!isPayrollMenuOpen);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    navigate("/");
   };
 
   return (
@@ -50,6 +58,7 @@ const Sidebar = () => {
         {/* Employees Sub-menu */}
         <li>
           <div className="menu-item" onClick={toggleEmployeeMenu}>
+            <FontAwesomeIcon icon={faUsers} className="users-icon" />
             Employees
             <FontAwesomeIcon
               icon={isEmployeeMenuOpen ? faAngleDown : faAngleRight}
@@ -78,7 +87,7 @@ const Sidebar = () => {
           )}
         </li>
 
-        {/* {Attendance sub-menu} */}
+        {/* Attendance Sub-menu */}
         <li>
           <div className="menu-item" onClick={toggleAttendanceMenu}>
             Attendance
@@ -113,11 +122,12 @@ const Sidebar = () => {
           )}
         </li>
 
+        {/* Payroll Sub-menu */}
         <li>
           <div className="menu-item" onClick={togglePayrollMenu}>
             Payroll
             <FontAwesomeIcon
-              icon={isAttendanceMenuOpen ? faAngleDown : faAngleRight}
+              icon={isPayrollMenuOpen ? faAngleDown : faAngleRight}
               className="payroll-menu-icon"
             />
           </div>
@@ -157,6 +167,11 @@ const Sidebar = () => {
         </li>
         <li>
           <Link to="/app-masters">App Masters</Link>
+        </li>
+        <li onClick={handleLogout}>
+          <Link to="/logout">
+            Logout <FontAwesomeIcon icon={faPowerOff} className="logout-icon" />
+          </Link>
         </li>
       </ul>
     </div>
