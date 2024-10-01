@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,12 +22,22 @@ import "./App.css";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [registeredUsers, setRegisteredUsers] = useState([
-    { email: "test@example.com", password: "Test@123" },
-  ]);
+  const [registeredUsers, setRegisteredUsers] = useState([]);
   const [sidebarVisible, setSidebarVisible] = useState(true);
 
+  const handleRegister = (email, password) => {
+    setRegisteredUsers((prevUsers) => {
+      const updatedUsers = [...prevUsers, { email, password }];
+      // Save updated users to local storage
+      localStorage.setItem("registeredUsers", JSON.stringify(updatedUsers));
+      return updatedUsers;
+    });
+    setIsAuthenticated(true);
+  };
+
   const handleLogin = (email, password) => {
+    console.log("Trying to log in with:", email, password);
+    console.log("Current registered users:", registeredUsers);
     const user = registeredUsers.find(
       (user) => user.email === email && user.password === password
     );
@@ -38,13 +48,19 @@ function App() {
     }
   };
 
-  const handleRegister = (email, password) => {
-    setRegisteredUsers([...registeredUsers, { email, password }]);
-    setIsAuthenticated(true);
-  };
+  useEffect(() => {
+    const storedUsers = JSON.parse(localStorage.getItem("registeredUsers"));
+    if (storedUsers) {
+      setRegisteredUsers(storedUsers);
+    }
+  }, []);
 
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
+  };
+
+  const handleForgotPassword = (email) => {
+    alert(`Password reset link sent to: ${email}`);
   };
 
   return (
@@ -54,6 +70,7 @@ function App() {
           <Sidebar
             toggleSidebar={toggleSidebar}
             sidebarVisible={sidebarVisible}
+            setIsAuthenticated={setIsAuthenticated}
           />
         )}
         <div
@@ -68,7 +85,11 @@ function App() {
                 isAuthenticated ? (
                   <Navigate to="/dashboard" />
                 ) : (
-                  <Login onLogin={handleLogin} onRegister={handleRegister} />
+                  <Login
+                    onLogin={handleLogin}
+                    onRegister={handleRegister}
+                    onForgotPassword={handleForgotPassword}
+                  />
                 )
               }
             />
@@ -138,6 +159,7 @@ function App() {
                 )
               }
             />
+            <Route path="/logout" element={<Navigate to="/" />} />
           </Routes>
         </div>
       </div>
